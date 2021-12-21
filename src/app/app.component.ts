@@ -15,5 +15,16 @@ export class AppComponent {
   sayMessage(){
     alert(this.message);
   }
+
+  condition=true;
+  onEditClick(){
+    this.canEdit= !this.canEdit;
+    if(this.canEdit){
+      this.message="I am from If"
+    }
+    else {
+      this.message="I am from else!"
+    }
+  }
 }
                                                                                                                     

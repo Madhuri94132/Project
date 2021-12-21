@@ -10,11 +10,16 @@
 <button  [disabled]="canClick" (click)="sayMessage()"> Alert Message</button>
 
 <div *ngIf="canEdit; else noEdit">
-     <p>I am from If</p>
+     <p>Edit</p>
 </div>
 <ng-template #noEdit>
-     <p> Try </p>
+     <p> NoEdit </p>
 </ng-template>
 
 <p [contentEditable]="canEdit">{{ message }}</p>
+
+<button (click)="onEditClick()">Make it Editable</button>
+<h3 *ngIf="condition; then thenBlock else elseBlock"></h3>
+<ng-template #thenBlock>Content to render when condition is true.</ng-template>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
 <router-outlet></router-outlet>
